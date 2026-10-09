@@ -37,6 +37,7 @@ MAX_CONTEXT_TOKENS = int(os.getenv("DSQA_MAX_CONTEXT_TOKENS", "6000"))
 MAX_NEW_TOKENS = int(os.getenv("DSQA_MAX_NEW_TOKENS", "320"))
 BM25_WEIGHT = float(os.getenv("DSQA_BM25_WEIGHT", "0.45"))
 VECTOR_WEIGHT = float(os.getenv("DSQA_VECTOR_WEIGHT", "0.55"))
+TOP_K = int(os.getenv("DSQA_TOP_K", "200"))
 
 ALIASES = {
     "dones": "ifmif-dones international fusion materials irradiation facility demo oriented neutron source",
@@ -174,7 +175,7 @@ def chunk_markdown(text: str, chunk_chars: int = CHUNK_CHARS, overlap: int = CHU
     return chunks
 
 
-def bm25_rank(question: str, chunks: Sequence[Chunk], k1: float = 1.5, b: float = 0.75) -> list[int]:
+def bm25_rank(question: str, chunks: Sequence[Chunk], k1: float = 1.5, b: float = 0.75, top_k: int = TOP_K) -> list[int]:
     """Return chunk indices ranked by a compact BM25 implementation."""
 
     query_terms = tokenize(expand_query(question))
@@ -204,10 +205,10 @@ def bm25_rank(question: str, chunks: Sequence[Chunk], k1: float = 1.5, b: float 
         scores.append((score, i))
 
     scores.sort(key=lambda item: (-item[0], item[1]))
-    return [i for _, i in scores]
+    return [i for _, i in scores[: max(1, top_k)]]
 
 
-def semantic_rank(question: str, chunks: Sequence[Chunk], embeddings: Any, embedder: Any) -> list[int]:
+def semantic_rank(question: str, chunks: Sequence[Chunk], embeddings: Any, embedder: Any, top_k: int = TOP_K) -> list[int]:
     """Return chunk indices by cosine similarity using a local embedder."""
 
     if len(chunks) == 0:
@@ -216,7 +217,7 @@ def semantic_rank(question: str, chunks: Sequence[Chunk], embeddings: Any, embed
     q = embedder.encode([query], normalize_embeddings=True, show_progress_bar=False)[0]
     scores = embeddings @ q
     order = sorted(range(len(chunks)), key=lambda i: (-float(scores[i]), i))
-    return order
+    return order[: max(1, top_k)]
 
 
 def reciprocal_rank_fusion(rankings: Iterable[Sequence[int]], weights: Sequence[float] | None = None, k: int = 60) -> list[int]:

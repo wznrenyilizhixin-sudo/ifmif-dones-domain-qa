@@ -65,6 +65,7 @@ python -m py_compile code/main.py
 | `DSQA_MAX_NEW_TOKENS` | 320 | 每题最大生成 token |
 | `DSQA_BM25_WEIGHT` | 0.45 | BM25 的 RRF 权重 |
 | `DSQA_VECTOR_WEIGHT` | 0.55 | 向量检索的 RRF 权重 |
+| `DSQA_TOP_K` | 200 | 每路检索进入融合的候选数 |
 | `DSQA_EMBED_MODEL` | `code/embed_model` | 本地 embedding 模型路径 |
 | `DSQA_DOCLING_MODELS` | `code/docling_models` | Docling artifacts 路径 |
 
