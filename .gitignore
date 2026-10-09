@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.zip
+*.pdf
+code/embed_model/
+code/docling_models/
+*.log
+.DS_Store
+Thumbs.db
