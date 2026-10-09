@@ -1,12 +1,10 @@
 刘老师您好：
 
-我是人工智能学院2026级本科生[姓名]（学号[学号]），申请参与 IEEE CIS Domain-Specific QA 挑战。
+我是人工智能学院2026级本科生[姓名]（学号[学号]），申请参与 IEEE CIS Domain-Specific QA 挑战。Phase 2创新占40%，关注您的RAG与评测，可补DONES域、数据与文档。
 
-赛制：D/P双域，固定模型、单H100/1小时/断网，Phase 2创新占40%。关注您的RAG与评测方向，可补DONES域、数据评测和文档。
+仓库：github.com/wznrenyilizhixin-sudo/ifmif-dones-domain-qa（70条术语、25题拆解、管线建议、RAG基线；代码仅本地验证，未跑32B/H100）。物竞省二，做过粒子加速器建模；另有FastAPI+Vue3项目。无LLM工程经验，正在补。
 
-仓库：github.com/wznrenyilizhixin-sudo/ifmif-dones-domain-qa（70条术语、25题拆解、管线建议、RAG基线；仅本地验证，未跑32B/H100）。物竞省二，做过粒子加速器建模；另有FastAPI+Vue3+MySQL项目。无LLM工程经验，正在补。
-
-诉求：先争名额；若给高年级，愿编外支援，并希望大二进GAI Lab从打杂做起。名额是院内推荐还是您个人带1人？附1页简历。
+诉求：先争名额；若给高年级，愿编外支援，并希望大二进GAI Lab从打杂做起。名额是院内推荐还是您个人带？附1页简历。
 
 [姓名]
 [手机号]｜[邮箱]｜wznrenyilizhixin-sudo
