@@ -1,7 +1,7 @@
 # [姓名]
 
 山东大学人工智能学院 · 2026 级本科生
-手机：[手机号] ｜ 邮箱：[邮箱] ｜ GitHub：[GitHub 账号] ｜ 学号：[学号]
+手机：[手机号] ｜ 邮箱：[邮箱] ｜ GitHub：wznrenyilizhixin-sudo ｜ 学号：[学号]
 
 ## 教育经历
 
@@ -45,6 +45,6 @@
 
 ## 证明材料
 
-- 公开仓库：[GitHub 仓库链接]
+- 公开仓库：https://github.com/wznrenyilizhixin-sudo/ifmif-dones-domain-qa
 - 物竞证书/加速器旧笔记：[待补]
 - 足球平台仓库/截图：[待补]

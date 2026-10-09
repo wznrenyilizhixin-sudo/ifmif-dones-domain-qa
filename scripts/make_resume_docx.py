@@ -38,7 +38,7 @@ def bullet(text: str) -> str:
 def build_document() -> str:
     paragraphs = [
         para("[姓名]", bold=True, size=38, after=30),
-        para("山东大学人工智能学院 · 2026 级本科生 ｜ 手机：[手机号] ｜ 邮箱：[邮箱] ｜ GitHub：[GitHub 账号] ｜ 学号：[学号]", size=16, after=80, color="444444"),
+        para("山东大学人工智能学院 · 2026 级本科生 ｜ 手机：[手机号] ｜ 邮箱：[邮箱] ｜ GitHub：wznrenyilizhixin-sudo ｜ 学号：[学号]", size=16, after=80, color="444444"),
         heading("教育经历"),
         para("山东大学 · 人工智能学院｜本科 2026 级｜济南", bold=True),
         bullet("当前绩点/排名：[待填]"),
@@ -68,7 +68,7 @@ def build_document() -> str:
         bullet("可投入：期中周以外每周 6–8 小时；11/12 体测、11/16 期中、12 月期末不为比赛让路。"),
         bullet("诚实说明：没有 LLM 工程经验，但能在明确任务下快速学习，并已交付可核验的预研材料。"),
         heading("证明材料"),
-        bullet("公开仓库：[GitHub 仓库链接]"),
+        bullet("公开仓库：https://github.com/wznrenyilizhixin-sudo/ifmif-dones-domain-qa"),
         bullet("物竞证书/加速器旧笔记：[待补]"),
         bullet("足球平台仓库/截图：[待补]"),
     ]
