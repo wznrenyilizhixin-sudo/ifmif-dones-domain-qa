@@ -20,6 +20,8 @@ def main() -> None:
     retrieval = ROOT / "docs" / "retrieval-notes.md"
     main_py = ROOT / "code" / "main.py"
     smoke_py = ROOT / "code" / "smoke_test.py"
+    email_body = ROOT / "email" / "email-body.txt"
+    resume_docx = ROOT / "email" / "resume-1page.docx"
 
     glossary_count = count_glossary_entries(glossary) if glossary.exists() else 0
     checks.append(("glossary >= 40 entries", glossary_count >= 40, str(glossary_count)))
@@ -36,6 +38,9 @@ def main() -> None:
     checks.append(("code main.py exists", main_py.exists(), str(main_py)))
     checks.append(("smoke_test.py exists", smoke_py.exists(), str(smoke_py)))
     checks.append(("no sample_qa.json copied", not list(ROOT.rglob("sample_qa.json")), ""))
+    email_text = email_body.read_text(encoding="utf-8") if email_body.exists() else ""
+    checks.append(("email body <= 400 chars", 0 < len(email_text) <= 400, str(len(email_text))))
+    checks.append(("resume docx exists", resume_docx.exists(), str(resume_docx.stat().st_size if resume_docx.exists() else 0)))
 
     failed = False
     for name, ok, detail in checks:
